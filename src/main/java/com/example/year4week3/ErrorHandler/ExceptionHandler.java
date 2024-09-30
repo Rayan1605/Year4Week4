@@ -11,7 +11,7 @@ public class ExceptionHandler {
     @org.springframework.web.bind.annotation.ExceptionHandler(MethodArgumentNotValidException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public String handlevalidation(MethodArgumentNotValidException e){
-        return "Error occurred " + e.getBindingResult().getFieldError().getDefaultMessage();
+        return "Error occurred. " + e.getBindingResult().getFieldError().getDefaultMessage();
         }
 
 }
