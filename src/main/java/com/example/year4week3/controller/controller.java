@@ -3,6 +3,7 @@ package com.example.year4week3.controller;
 
 import com.example.year4week3.Entity.Product;
 import com.example.year4week3.service.service;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,7 +22,7 @@ public class controller {
     }
 
     @PostMapping("/add")
-    public String AddProduct(@RequestBody Product product){
+    public String AddProduct(@Valid @RequestBody Product product){
         functions.addProduct(product);
         return "Added product successfully";
     }
