@@ -4,7 +4,8 @@ FROM openjdk:17
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the generated JAR file into the container
+
+# Used the mvn clean package command to generate the JAR file
 ADD target/Year4Week3-0.0.1-SNAPSHOT.jar /app
 
 # Expose port 8080
