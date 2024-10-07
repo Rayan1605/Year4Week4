@@ -9,4 +9,4 @@ ADD target/Year4Week3-0.0.1-SNAPSHOT.jar /app
 EXPOSE 8080
 
 ##This is how you run it in cmd
-CMD ["java","-jar","PaymentService-0.0.1-SNAPSHOT.jar"]
+CMD ["java","-jar","Year4Week3-0.0.1-SNAPSHOT.jar"]

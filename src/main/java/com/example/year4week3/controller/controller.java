@@ -32,7 +32,7 @@ public class controller {
         return functions.UpdateProduct(product);
     }
     @DeleteMapping("/delete")
-    public String DeleteProduct(@RequestParam int id){
+    public String DeleteProduct(@RequestBody Product product){
         return functions.deleteProduct(product);
     }
 
