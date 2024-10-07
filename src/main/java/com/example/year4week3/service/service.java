@@ -1,6 +1,7 @@
 package com.example.year4week3.service;
 
 import com.example.year4week3.Entity.Product;
+import com.example.year4week3.inter.JpaRepo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -10,13 +11,15 @@ import java.util.List;
 public class service {
 
     List<Product> Product = new ArrayList<>();
+    private JpaRepo jpaRepo;
 
     public List<Product> GetProduct() {
-        return Product;
+        return jpaRepo.findAll();
     }
 
-    public void addProduct(Product product) {
-        Product.add(product);
+    public String addProduct(Product product) {
+        jpaRepo.save(product);
+        return "It saved the product";
     }
 
     public String UpdateProduct(Product product) {

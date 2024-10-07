@@ -3,6 +3,7 @@ package com.example.year4week3.controller;
 
 import com.example.year4week3.Entity.Product;
 import com.example.year4week3.inter.Communciation;
+import com.example.year4week3.inter.JpaRepo;
 import com.example.year4week3.service.service;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
@@ -18,15 +19,16 @@ public class controller {
     private service functions;
 
     private Communciation communciation;
+    private JpaRepo jpaRepo;
 
     @GetMapping("/GET")
     public List<Product> GetProduct(){
-        return communciation.getProduct();
+        return functions.GetProduct();
     }
 
     @PostMapping("/add")
     public String AddProduct(@Valid @RequestBody Product product){
-     return communciation.AddProduct(product);
+     return functions.addProduct(product);
     }
     @PutMapping("/update")
     public String UpdateProduct(@RequestBody Product product){
