@@ -18,9 +18,6 @@ public class controller {
 
     private service functions;
 
-    private Communciation communciation;
-    private JpaRepo jpaRepo;
-
     @GetMapping("/GET")
     public List<Product> GetProduct(){
         return functions.GetProduct();
@@ -34,8 +31,8 @@ public class controller {
     public String UpdateProduct(@RequestBody Product product){
         return functions.UpdateProduct(product);
     }
-    @PutMapping("/delete")
-    public String DeleteProduct(@RequestBody Product product){
+    @DeleteMapping("/delete")
+    public String DeleteProduct(@RequestParam int id){
         return functions.deleteProduct(product);
     }
 
